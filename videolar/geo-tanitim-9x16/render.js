@@ -10,7 +10,7 @@ const path = require('path');
     const ts = process.argv.slice(3).map(Number);
     for (const t of ts) { await page.evaluate(t => render(t), t); await page.screenshot({ path: `still_${t}.png` }); }
   } else {
-    const fps = 30, dur = 40.6, out = process.argv[3] || 'silent.mp4';
+    const fps = 30, dur = 44.2, out = process.argv[3] || 'silent.mp4';
     const ff = spawn('ffmpeg', ['-v','error','-y','-f','image2pipe','-framerate',String(fps),'-c:v','mjpeg','-i','-','-c:v','libx264','-pix_fmt','yuv420p','-crf','18','-preset','medium','-movflags','+faststart',out], { stdio: ['pipe','inherit','inherit'] });
     const N = Math.round(fps * dur);
     for (let i = 0; i < N; i++) {

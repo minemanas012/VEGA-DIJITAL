@@ -240,17 +240,17 @@ function show(el, t, a, b, opt = {}) {
 const SUBS = [
   [0.3, 5.4, "Müşterileriniz artık yalnızca Google'da aramıyor,", " yapay zekâya da soruyor."],
   [5.8, 11.4, "Peki ChatGPT ya da Gemini yanıt verirken", " sizi kaynak gösteriyor mu?"],
-  [12.2, 15.6, "Hedef kitlenizin yapay zekâya", " hangi soruları sorduğunu belirliyoruz."],
-  [15.8, 19.1, "Markanızın nasıl anıldığını", " platform ve tarih kaydıyla izliyoruz."],
-  [19.3, 22.6, "Yapay zekânın hangi siteleri", " kaynak gösterdiğini buluyoruz."],
-  [22.8, 26.0, "Marka ve hizmet bilgilerinizi", " tutarlı ve okunabilir hâle getiriyoruz."],
-  [26.6, 33.2, "Google'da sıralanmak tek başına yetmiyor.", " Yapay zekâ yanıtlarında da doğru anlaşılmalısınız."],
-  [34.0, 40.3, "Markanızın yapay zekâdaki görünürlüğünü", " birlikte değerlendirelim."],
+  [12.4, 16.5, "Hedef kitlenizin yapay zekâya", " hangi soruları sorduğunu belirliyoruz."],
+  [16.8, 20.9, "Markanızın nasıl anıldığını", " platform ve tarih kaydıyla izliyoruz."],
+  [21.2, 25.3, "Yapay zekânın hangi siteleri", " kaynak gösterdiğini buluyoruz."],
+  [25.6, 29.7, "Marka ve hizmet bilgilerinizi", " tutarlı ve okunabilir hâle getiriyoruz."],
+  [30.2, 36.8, "Google'da sıralanmak tek başına yetmiyor.", " Yapay zekâ yanıtlarında da doğru anlaşılmalısınız."],
+  [37.6, 43.9, "Markanızın yapay zekâdaki görünürlüğünü", " birlikte değerlendirelim."],
 ];
 
 function render(t) {
   // Backgrounds
-  const dark = Math.max(easeInOut(prog(t, 11.4, 12.2)) - easeInOut(prog(t, 33.2, 34.0)), 0);
+  const dark = Math.max(easeInOut(prog(t, 11.4, 12.2)) - easeInOut(prog(t, 36.8, 37.6)), 0);
   $('bgDark').style.opacity = dark;
   const w = t * 0.35;
   $('bl1').style.left = (180 + Math.sin(w) * 120) + 'px'; $('bl1').style.top = (1050 + Math.cos(w * .8) * 90) + 'px';
@@ -259,7 +259,7 @@ function render(t) {
   $('bd1').style.left = (40 + Math.sin(w) * 140) + 'px'; $('bd1').style.top = (800 + Math.cos(w * .8) * 120) + 'px';
   $('bd2').style.left = (500 + Math.cos(w * .6) * 120) + 'px'; $('bd2').style.top = (1300 + Math.sin(w) * 80) + 'px';
   $('brand').style.color = dark > .5 ? '#fff' : 'var(--ink)';
-  $('brand').style.opacity = 1 - prog(t, 33.4, 34.0) * 1;
+  $('brand').style.opacity = 1 - prog(t, 37.0, 37.6);
 
   // Subtitles: second half fades in from dim
   const sub = $('subtitle');
@@ -303,14 +303,14 @@ function render(t) {
   }
 
   // S3 12–26.2
-  const s3on = t > 11.8 && t < 26.6;
+  const s3on = t > 11.8 && t < 30.2;
   $('s3').style.display = s3on ? 'block' : 'none';
   if (s3on) {
-    const steps = [[12.2, 15.7, 'Sorular'], [15.7, 19.2, 'Görünürlük'], [19.2, 22.7, 'Kaynaklar'], [22.7, 26.2, 'Bilgi Temeli']];
+    const steps = [[12.2, 16.6, 'Sorular'], [16.6, 21.0, 'Görünürlük'], [21.0, 25.4, 'Kaynaklar'], [25.4, 29.8, 'Bilgi Temeli']];
     let cur = steps.findIndex(([a, b]) => t >= a - 0.2 && t < b);
     if (cur < 0) cur = 3;
     $('chipTxt').textContent = steps[cur][2];
-    show($('chip3'), t, 12.2, 26.2, { dy: 20 });
+    show($('chip3'), t, 12.2, 29.8, { dy: 20 });
     steps.forEach(([a, b], i) => {
       const p = $('p' + i);
       const inP = easeOut(prog(t, a, a + 0.75));
@@ -334,49 +334,49 @@ function render(t) {
     });
     // panel inner animation
     for (let i = 0; i < 6; i++) {
-      const pr = easeOut(prog(t, 16.4 + i * 0.18, 17.4 + i * 0.18));
+      const pr = easeOut(prog(t, 17.3 + i * 0.18, 18.3 + i * 0.18));
       $('b' + i).style.width = (pr * [72, 48, 60, 35, 54, 28][i]) + '%';
-      const cp = prog(t, 23.4 + i * 0.3, 23.6 + i * 0.3);
+      const cp = prog(t, 26.1 + i * 0.3, 26.3 + i * 0.3);
       $('c' + i).style.background = cp > 0 ? 'var(--green)' : '#fff';
       $('c' + i).style.borderColor = cp > 0 ? 'var(--green)' : '#D5DBE6';
       $('c' + i).style.color = cp > 0 ? '#fff' : 'transparent';
       $('c' + i).style.transform = `scale(${cp > 0 ? 0.7 + 0.3 * back(cp) : 1})`;
     }
-    const hp = prog(t, 20.6, 21.1);
+    const hp = prog(t, 22.4, 22.9);
     $('ownRow').style.background = `rgba(255,79,139,${hp * .1})`;
     $('ownRow').style.outline = hp > 0 ? `3px solid rgba(255,79,139,${hp})` : 'none';
   }
 
   // S4 26.4–33.4
-  const s4on = t > 26.2 && t < 33.6;
+  const s4on = t > 29.8 && t < 37.2;
   $('s4').style.display = s4on ? 'block' : 'none';
   if (s4on) {
-    show($('why'), t, 26.5, 33.3, { dy: 20 });
-    show($('s4a'), t, 26.8, 33.3, { dy: 50, d: .8 });
-    show($('s4b'), t, 29.4, 33.3, { dy: 50, d: .8 });
+    show($('why'), t, 30.1, 36.9, { dy: 20 });
+    show($('s4a'), t, 30.4, 36.9, { dy: 50, d: .8 });
+    show($('s4b'), t, 33.0, 36.9, { dy: 50, d: .8 });
     for (let i = 0; i < 6; i++) {
       const e = $('f' + i);
-      const a = 27.6 + i * 0.3;
-      const v = show(e, t, a, 33.3, { dy: 30, blur: 8 });
+      const a = 31.2 + i * 0.3;
+      const v = show(e, t, a, 36.9, { dy: 30, blur: 8 });
       const fl = Math.sin(t * 1.3 + i * 1.7) * 14;
       e.style.transform += ` translateY(${fl}px)`;
     }
   }
 
   // S5 33.8–40.6
-  const s5on = t > 33.6;
+  const s5on = t > 37.2;
   $('s5').style.display = s5on ? 'block' : 'none';
   if (s5on) {
-    const lp = prog(t, 34.0, 34.9);
+    const lp = prog(t, 37.6, 38.5);
     $('logo').style.opacity = easeOut(lp);
     $('logo').style.transform = `scale(${0.85 + 0.15 * easeOut(lp)})`;
     $('logo').style.filter = lp < 1 ? `blur(${(1 - lp) * 12}px)` : 'none';
-    show($('s5a'), t, 35.2, null, { dy: 40, d: .8 });
-    $('s5a2').style.opacity = 0.25 + 0.75 * prog(t, 36.0, 36.8);
-    const cp = prog(t, 37.0, 37.6);
+    show($('s5a'), t, 38.8, null, { dy: 40, d: .8 });
+    $('s5a2').style.opacity = 0.25 + 0.75 * prog(t, 39.6, 40.4);
+    const cp = prog(t, 40.6, 41.2);
     $('cta').style.opacity = clamp(cp * 2);
     $('cta').style.transform = `scale(${0.6 + 0.4 * back(cp)})`;
-    show($('url'), t, 37.5, null, { dy: 20 });
+    show($('url'), t, 41.1, null, { dy: 20 });
   }
 }
 window.render = render;
