@@ -6,7 +6,7 @@
   :root {
     --light: #F5F7FA;
     --navy: #0A1430;
-    --ink: #0E1630;
+    --ink: #14284C;
     --muted: #8A93A8;
     --blue: #2D6BFF;
     --pink: #FF4F8B;
@@ -26,7 +26,8 @@
   .h1 { font-weight: 700; font-size: 76px; letter-spacing: -2px; line-height: 1.12; }
   .sub { font-family: 'Open Sauce One', 'Inter', sans-serif; font-weight: 500; font-size: 36px; line-height: 1.35; padding: 0 90px; }
   .sub .dim { color: var(--muted); }
-  #brand { top: 70px; left: 70px; font-weight: 700; font-size: 30px; letter-spacing: -0.5px; display: flex; align-items: center; gap: 12px; }
+  #brand { top: 70px; left: 70px; width: 118px; height: 106px; }
+  #brand img { position: absolute; left: 0; top: 0; width: 118px; }
   .vmark { width: 40px; height: 40px; border-radius: 11px; background: linear-gradient(135deg, var(--blue), var(--pink)); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 800; }
   #subtitle { top: 1610px; }
 
@@ -83,11 +84,11 @@
   .fchip::before { content: ''; width: 10px; height: 10px; border-radius: 50%; background: var(--mint); }
 
   /* S5 */
-  #logo { top: 640px; display: flex; justify-content: center; }
+  #logo { top: 380px; display: flex; justify-content: center; }
   #logo .in { display: flex; align-items: center; gap: 22px; font-size: 84px; font-weight: 800; letter-spacing: -2.5px; }
   #logo .vmark { width: 104px; height: 104px; border-radius: 28px; font-size: 62px; }
   #logo .dj { font-weight: 500; color: #4A5370; }
-  #s5a { top: 860px; font-size: 58px; font-weight: 700; letter-spacing: -1.5px; }
+  #s5a { top: 840px; font-size: 58px; font-weight: 700; letter-spacing: -1.5px; }
   #s5a span { color: var(--blue); }
   #cta { top: 1100px; display: flex; justify-content: center; align-items: center; gap: 30px; }
   .ctaBtn { background: var(--green); color: #fff; font-weight: 700; font-size: 38px; padding: 26px 46px; border-radius: 60px; box-shadow: 0 20px 50px rgba(25,185,133,.35); }
@@ -106,7 +107,7 @@
     <div class="blob" id="bd2" style="width:700px;height:700px;background:#0FA67A;opacity:.25"></div>
   </div>
 
-  <div id="brand" class="abs"><div class="vmark">V</div><span id="brandTxt">Vega Dijital</span></div>
+  <div id="brand" class="abs"><img id="brandDark" src="logo-lacivert.png"><img id="brandLight" src="logo-beyaz.png"></div>
 
   <!-- S1 -->
   <div id="s1" class="abs" style="inset:0">
@@ -207,7 +208,7 @@
 
   <!-- S5 -->
   <div id="s5" class="abs" style="inset:0">
-    <div id="logo" class="abs center"><div class="in"><div class="vmark">V</div><span>Vega <span class="dj">Dijital</span></span></div></div>
+    <div id="logo" class="abs center"><img src="logo-lacivert.png" style="width:400px"></div>
     <div id="s5a" class="abs center">Google'da bulunun,<br><span id="s5a2">yapay zekâda doğru anlaşılın.</span></div>
     <div id="cta" class="abs center"><span class="ctaBtn">WhatsApp'tan yazın →</span></div>
     <div id="url" class="abs center url" style="top:1260px">vegadijital.com.tr</div>
@@ -258,7 +259,7 @@ function render(t) {
   $('bl3').style.left = (700 + Math.sin(w * 1.1) * 80) + 'px'; $('bl3').style.top = (200 + Math.cos(w) * 80) + 'px';
   $('bd1').style.left = (40 + Math.sin(w) * 140) + 'px'; $('bd1').style.top = (800 + Math.cos(w * .8) * 120) + 'px';
   $('bd2').style.left = (500 + Math.cos(w * .6) * 120) + 'px'; $('bd2').style.top = (1300 + Math.sin(w) * 80) + 'px';
-  $('brand').style.color = dark > .5 ? '#fff' : 'var(--ink)';
+  $('brandLight').style.opacity = dark; $('brandDark').style.opacity = 1 - dark;
   $('brand').style.opacity = 1 - prog(t, 37.0, 37.6);
 
   // Subtitles: second half fades in from dim
