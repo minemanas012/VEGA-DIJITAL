@@ -24,3 +24,10 @@ Kaynak: Mine Manas'ın kendi Reels kurgusu (örnek: `1014.mp4`) + Claude ile kur
 - Stok görüntü ara planları ilgili cümle boyunca, altyazı devam eder.
 - Referans videodan alınabilecek sade öğeler: beyaz kartlı başlıklar, numaralı "Yöntem 1/4" kartları, ekran görüntüsü üzerinde sarı vurgu, kapanışta yorum/takip çağrısı (Vega'da CTA: WhatsApp).
 - Hashtag yok; dayanaksız iddia yok (bkz. `marka-rehberi.md`).
+
+## İş akışı (kararlaştırılan)
+1. Mine Manas prompter ile çeker; ham çekim (efektsiz, altyazısız) 30 MB altı parçalar halinde yüklenir.
+2. Prompter metni (konuşma metni) gönderilir; cümleler sessizlik analiziyle ses bölümlerine eşlenir.
+3. Claude kurgular: ölü an/tekrar kesimi, zoom in/out, punch-in, kısa sarsıntı, flaş, ses efekti, stok görüntü yerleşimi, ses dengeleme.
+4. Teslim: altyazısız 1080p MP4. Altyazıyı Mine Manas CapCut'ta ekler.
+5. Revize notları saniye bazında ("0:08 zoom'u kaldır").
