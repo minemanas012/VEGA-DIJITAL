@@ -7,7 +7,7 @@ Kaynak: Mine Manas'ın kendi Reels kurgusu (örnek: `1014.mp4`) + Claude ile kur
 - Konuşan kişi (Mine Manas) + yer yer stok görüntü ara planları.
 
 ## Altyazı (DEĞİŞMEZ)
-- Font: **Montserrat**, ExtraBold/Black, küçük harf (cümlenin yazıldığı gibi).
+- Font: **Montserrat ExtraBold** (`assets/fonts/`), küçük harf (cümlenin yazıldığı gibi). Not: ffonts.net kaynaklı eski "montserrat-bold" dosyası İ, ğ, Ğ, ş, Ş içermez — kullanılmaz.
 - Ana renk: beyaz, ince siyah kontur + hafif gölge.
 - Vurgu: aktif/önemli kelime **sarı `#FCE400`**; ikinci vurgu **kırmızı** (yaklaşık `#E00000`, kesin kod doğrulanacak).
 - Satır başına 2–4 kelime, en fazla 2 satır, ortalı.
