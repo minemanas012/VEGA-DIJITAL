@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<style>
+  :root {
+    --light: #F5F7FA;
+    --navy: #0A1430;
+    --ink: #14284C;
+    --muted: #8A93A8;
+    --blue: #2D6BFF;
+    --pink: #FF4F8B;
+    --green: #19B985;
+    --mint: #8FE3C8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; }
+  body { font-family: 'Montserrat', 'Inter', sans-serif; color: var(--ink); background: var(--light); }
+  .abs { position: absolute; }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+  #bgLight, #bgDark { position: absolute; inset: 0; }
+  #bgLight { background: var(--light); }
+  #bgDark { background: var(--navy); opacity: 0; }
+  .blob { position: absolute; border-radius: 50%; filter: blur(120px); }
+  .center { left: 0; width: 1080px; text-align: center; }
+  .h1 { font-weight: 700; font-size: 76px; letter-spacing: -2px; line-height: 1.12; }
+  .sub { font-family: 'Open Sauce One', 'Inter', sans-serif; font-weight: 500; font-size: 36px; line-height: 1.35; padding: 0 90px; }
+  .sub .dim { color: var(--muted); }
+  #brand { top: 70px; left: 70px; width: 118px; height: 106px; }
+  #brand img { position: absolute; left: 0; top: 0; width: 118px; }
+  .vmark { width: 40px; height: 40px; border-radius: 11px; background: linear-gradient(135deg, var(--blue), var(--pink)); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 800; }
+  #subtitle { top: 1610px; }
+
+  /* S1 */
+  #s1a { top: 640px; }
+  #s1b { color: #3A4258; position: relative; display: inline-block; font-size: 60px; letter-spacing: -1.5px; }
+  #s1bWrap { top: 740px; }
+  #strike { position: absolute; left: 0; top: 52%; height: 7px; background: var(--pink); border-radius: 4px; }
+  #s1c { top: 860px; font-size: 104px; color: var(--blue); }
+
+  /* S2 chat */
+  #chat { left: 70px; top: 520px; width: 940px; background: #fff; border-radius: 36px; box-shadow: 0 30px 90px rgba(20,40,90,.14); padding: 46px 48px 60px; }
+  .chatHead { display: flex; justify-content: space-between; align-items: center; font-size: 26px; font-weight: 600; color: #4A5370; }
+  .tabs { display: flex; gap: 10px; }
+  .tab { font-size: 22px; padding: 8px 18px; border-radius: 30px; background: #EEF1F6; color: #6A7390; font-weight: 600; }
+  .tab.on { background: var(--blue); color: #fff; }
+  #bubble { margin: 48px 0 0 auto; width: fit-content; max-width: 720px; background: var(--ink); color: #fff; font-size: 32px; font-weight: 600; padding: 22px 30px; border-radius: 28px 28px 6px 28px; line-height: 1.3; min-height: 84px; }
+  .ans { margin-top: 30px; display: flex; align-items: center; gap: 18px; }
+  .num { width: 46px; height: 46px; border-radius: 50%; background: #EEF1F6; font-size: 22px; font-weight: 700; color: #6A7390; display: flex; align-items: center; justify-content: center; flex: none; }
+  .line { height: 18px; border-radius: 9px; background: #E7EBF2; flex: 1; }
+  .src { font-size: 24px; font-weight: 600; color: #4A5370; white-space: nowrap; }
+  .src b { color: var(--blue); }
+  #warn { left: 520px; top: 1040px; background: var(--pink); color: #fff; font-weight: 700; font-size: 34px; padding: 18px 30px; border-radius: 22px; box-shadow: 0 20px 50px rgba(255,79,139,.45); }
+
+  /* S3 panels */
+  .panelChip { top: 330px; display: flex; justify-content: center; }
+  .chip { display: inline-flex; align-items: center; gap: 14px; color: #fff; font-weight: 700; font-size: 38px; }
+  .chip .k { background: var(--blue); font-size: 22px; padding: 6px 14px; border-radius: 10px; letter-spacing: 1px; }
+  .panel { left: 90px; top: 450px; width: 900px; height: 830px; background: #fff; border-radius: 34px; box-shadow: 0 40px 120px rgba(45,107,255,.35); padding: 54px 50px; overflow: hidden; }
+  .pTitle { font-size: 34px; font-weight: 700; letter-spacing: -0.5px; }
+  .pDesc { font-family: 'Open Sauce One', 'Inter', sans-serif; font-size: 24px; color: var(--muted); margin-top: 10px; line-height: 1.35; }
+  .row { display: flex; align-items: center; gap: 18px; padding: 26px 0; border-bottom: 2px solid #EEF1F6; font-size: 27px; font-weight: 600; color: #2A3350; }
+  .row:last-child { border-bottom: none; }
+  .dot { width: 16px; height: 16px; border-radius: 50%; flex: none; }
+  .pill { margin-left: auto; font-size: 21px; font-weight: 700; padding: 8px 16px; border-radius: 20px; white-space: nowrap; }
+  .pill.g { background: #E2F7EF; color: #0F8E64; }
+  .pill.b { background: #E6EEFF; color: var(--blue); }
+  .pill.p { background: #FFE7EF; color: #D9336D; }
+  .pill.n { background: #EEF1F6; color: #6A7390; }
+  .bar { height: 14px; border-radius: 7px; background: #E7EBF2; width: 200px; margin-left: auto; position: relative; overflow: hidden; }
+  .bar i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 7px; }
+  .check { width: 44px; height: 44px; border-radius: 12px; border: 3px solid #D5DBE6; flex: none; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 26px; font-weight: 800; }
+  .badge { background: #fff; border-radius: 22px; padding: 18px 28px; box-shadow: 0 24px 60px rgba(0,0,0,.35); border: 2px solid #E6EEFF; }
+  .badge .t { font-size: 18px; font-weight: 700; color: var(--blue); letter-spacing: 2px; }
+  .badge .v { font-size: 38px; font-weight: 800; color: var(--ink); letter-spacing: -1px; margin-top: 4px; }
+  .sublight { color: #fff; }
+  .sublight .dim { color: #7F8DB5; }
+
+  /* S4 */
+  #why { top: 700px; color: #8FB0FF; font-weight: 700; font-size: 26px; letter-spacing: 4px; }
+  #s4a { top: 770px; color: #fff; font-size: 70px; }
+  #s4b { top: 950px; color: #fff; font-size: 54px; font-weight: 600; }
+  .fchip { background: rgba(255,255,255,.08); border: 2px solid rgba(255,255,255,.14); color: #DDE5FF; font-weight: 600; font-size: 28px; padding: 12px 24px; border-radius: 40px; display: flex; align-items: center; gap: 10px; }
+  .fchip::before { content: ''; width: 10px; height: 10px; border-radius: 50%; background: var(--mint); }
+
+  /* S5 */
+  #logo { top: 380px; display: flex; justify-content: center; }
+  #logo .in { display: flex; align-items: center; gap: 22px; font-size: 84px; font-weight: 800; letter-spacing: -2.5px; }
+  #logo .vmark { width: 104px; height: 104px; border-radius: 28px; font-size: 62px; }
+  #logo .dj { font-weight: 500; color: #4A5370; }
+  #s5a { top: 840px; font-size: 58px; font-weight: 700; letter-spacing: -1.5px; }
+  #s5a span { color: var(--blue); }
+  #cta { top: 1100px; display: flex; justify-content: center; align-items: center; gap: 30px; }
+  .ctaBtn { background: var(--green); color: #fff; font-weight: 700; font-size: 38px; padding: 26px 46px; border-radius: 60px; box-shadow: 0 20px 50px rgba(25,185,133,.35); }
+  .url { font-size: 34px; font-weight: 600; color: #4A5370; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="bgLight">
+    <div class="blob" id="bl1" style="width:900px;height:900px;background:#9EE6D2;"></div>
+    <div class="blob" id="bl2" style="width:760px;height:760px;background:#A9C3FF;"></div>
+    <div class="blob" id="bl3" style="width:500px;height:500px;background:#FFC2D6;"></div>
+  </div>
+  <div id="bgDark">
+    <div class="blob" id="bd1" style="width:1000px;height:1000px;background:#1E4FD8;opacity:.55"></div>
+    <div class="blob" id="bd2" style="width:700px;height:700px;background:#0FA67A;opacity:.25"></div>
+  </div>
+
+  <div id="brand" class="abs"><img id="brandDark" src="logo-lacivert.png"><img id="brandLight" src="logo-beyaz.png"></div>
+
+  <!-- S1 -->
+  <div id="s1" class="abs" style="inset:0">
+    <div id="s1a" class="abs center h1">Müşterileriniz artık</div>
+    <div id="s1bWrap" class="abs center h1"><span id="s1b">yalnızca Google'da aramıyor,<i id="strike"></i></span></div>
+    <div id="s1c" class="abs center h1">yapay zekâya da soruyor.</div>
+  </div>
+
+  <!-- S2 -->
+  <div id="s2" class="abs" style="inset:0">
+    <div id="chat" class="abs">
+      <div class="chatHead"><span>Yapay zekâ asistanı</span>
+        <div class="tabs"><span class="tab" id="tb0">ChatGPT</span><span class="tab" id="tb1">Gemini</span><span class="tab" id="tb2">Perplexity</span></div></div>
+      <div id="bubble"></div>
+      <div style="margin-top:20px">
+        <div class="ans" id="an0"><div class="num">1</div><div class="line"></div><div class="src">Kaynak: <b>rakip-a.com</b></div></div>
+        <div class="ans" id="an1"><div class="num">2</div><div class="line"></div><div class="src">Kaynak: <b>rakip-b.com</b></div></div>
+        <div class="ans" id="an2"><div class="num">3</div><div class="line"></div><div class="src">Kaynak: <b>rakip-c.com</b></div></div>
+      </div>
+    </div>
+    <div id="warn" class="abs">Markanız kaynaklarda yok</div>
+  </div>
+
+  <!-- S3 -->
+  <div id="s3" class="abs" style="inset:0">
+    <div class="abs center panelChip" id="chip3"><span class="chip"><span class="k">GEO</span><span id="chipTxt">Sorular</span></span></div>
+
+    <div class="abs panel" id="p0">
+      <div class="pTitle">Soru haritası</div>
+      <div class="pDesc">Hedef kitlenin yapay zekâya sorduğu sorular, niyete göre gruplanır.</div>
+      <div style="margin-top:26px">
+        <div class="row"><span class="dot" style="background:var(--blue)"></span>Adana'da kurumsal web tasarım firması<span class="pill b">Karşılaştırma</span></div>
+        <div class="row"><span class="dot" style="background:var(--green)"></span>Google İşletme Profili nasıl düzenlenir?<span class="pill g">Bilgi</span></div>
+        <div class="row"><span class="dot" style="background:var(--pink)"></span>E-ticaret için hangi reklam modeli?<span class="pill p">Karar</span></div>
+        <div class="row"><span class="dot" style="background:var(--blue)"></span>SEO ajansı seçerken nelere bakılır?<span class="pill b">Karşılaştırma</span></div>
+        <div class="row"><span class="dot" style="background:var(--green)"></span>Yerel SEO neden önemli?<span class="pill g">Bilgi</span></div>
+        <div class="row"><span class="dot" style="background:var(--pink)"></span>Meta reklamları kimler için uygun?<span class="pill p">Karar</span></div>
+      </div>
+    </div>
+
+    <div class="abs panel" id="p1">
+      <div class="pTitle">Görünürlük kaydı</div>
+      <div class="pDesc">Her gözlem; soru, platform, tarih ve koşullarla birlikte kaydedilir.</div>
+      <div style="margin-top:26px">
+        <div class="row"><span class="dot" style="background:#10A37F"></span>ChatGPT<div class="bar"><i id="b0" style="background:var(--blue)"></i></div><span class="pill n">13 Eki</span></div>
+        <div class="row"><span class="dot" style="background:#4285F4"></span>Gemini<div class="bar"><i id="b1" style="background:var(--blue)"></i></div><span class="pill n">13 Eki</span></div>
+        <div class="row"><span class="dot" style="background:#20808D"></span>Perplexity<div class="bar"><i id="b2" style="background:var(--green)"></i></div><span class="pill n">13 Eki</span></div>
+        <div class="row"><span class="dot" style="background:#D97757"></span>Claude<div class="bar"><i id="b3" style="background:var(--pink)"></i></div><span class="pill n">13 Eki</span></div>
+        <div class="row"><span class="dot" style="background:#FBBC05"></span>AI Overviews<div class="bar"><i id="b4" style="background:var(--blue)"></i></div><span class="pill n">13 Eki</span></div>
+        <div class="row"><span class="dot" style="background:#6A7390"></span>Copilot<div class="bar"><i id="b5" style="background:var(--green)"></i></div><span class="pill n">13 Eki</span></div>
+      </div>
+    </div>
+
+    <div class="abs panel" id="p2">
+      <div class="pTitle">Kaynak analizi</div>
+      <div class="pDesc">Yanıtlarda hangi sitelerin kaynak gösterildiği ve nedeni incelenir.</div>
+      <div style="margin-top:26px">
+        <div class="row">rakip-a.com<span class="pill b">Hizmet sayfası</span></div>
+        <div class="row">sektor-rehberi.com<span class="pill g">Rehber içerik</span></div>
+        <div class="row">yerel-haber.com<span class="pill n">Haber</span></div>
+        <div class="row">rakip-b.com<span class="pill b">Blog</span></div>
+        <div class="row">firma-dizini.com<span class="pill n">Dizin</span></div>
+        <div class="row" id="ownRow" style="border-radius:18px;padding-left:18px;padding-right:18px">siteniz.com.tr<span class="pill p">Eksik</span></div>
+      </div>
+    </div>
+
+    <div class="abs panel" id="p3">
+      <div class="pTitle">Bilgi temeli</div>
+      <div class="pDesc">Markanızı doğru anlatan bilgiler tutarlı ve okunabilir hâle getirilir.</div>
+      <div style="margin-top:26px">
+        <div class="row"><span class="check" id="c0">✓</span>Marka ve kurucu bilgileri</div>
+        <div class="row"><span class="check" id="c1">✓</span>Hizmet açıklamaları</div>
+        <div class="row"><span class="check" id="c2">✓</span>Uzman ve yazar profilleri</div>
+        <div class="row"><span class="check" id="c3">✓</span>Soru odaklı içerik yapısı</div>
+        <div class="row"><span class="check" id="c4">✓</span>Yapılandırılmış veri</div>
+        <div class="row"><span class="check" id="c5">✓</span>Platformlar arası tutarlılık</div>
+      </div>
+    </div>
+
+    <div class="abs badge" id="bg0" style="left:60px;top:1210px"><div class="t">• NİYETE GÖRE</div><div class="v">3 soru grubu</div></div>
+    <div class="abs badge" id="bg1" style="left:620px;top:390px"><div class="t">• İZLENEN</div><div class="v">6 platform</div></div>
+    <div class="abs badge" id="bg2" style="left:560px;top:1225px"><div class="t">• KAYNAK</div><div class="v">Sizin siteniz?</div></div>
+    <div class="abs badge" id="bg3" style="left:60px;top:1215px"><div class="t">• YAPILANDIRILMIŞ</div><div class="v">Schema</div></div>
+  </div>
+
+  <!-- S4 -->
+  <div id="s4" class="abs" style="inset:0">
+    <div id="why" class="abs center">• NEDEN ŞİMDİ?</div>
+    <div id="s4a" class="abs center h1">Google'da sıralanmak<br><span id="s4a2">tek başına <span style="color:#6E9BFF">yetmiyor.</span></span></div>
+    <div id="s4b" class="abs center">Yapay zekâ yanıtlarında da<br><span style="color:#8FE3C8">doğru anlaşılmalısınız.</span></div>
+    <div class="abs fchip" id="f0" style="left:90px;top:470px">ChatGPT</div>
+    <div class="abs fchip" id="f1" style="left:740px;top:430px">Gemini</div>
+    <div class="abs fchip" id="f2" style="left:70px;top:1260px">Perplexity</div>
+    <div class="abs fchip" id="f3" style="left:780px;top:1220px">Claude</div>
+    <div class="abs fchip" id="f4" style="left:420px;top:1400px">Grok</div>
+    <div class="abs fchip" id="f5" style="left:640px;top:1430px">AI Overviews</div>
+  </div>
+
+  <!-- S5 -->
+  <div id="s5" class="abs" style="inset:0">
+    <div id="logo" class="abs center"><img src="logo-lacivert.png" style="width:400px"></div>
+    <div id="s5a" class="abs center">Google'da bulunun,<br><span id="s5a2">yapay zekâda doğru anlaşılın.</span></div>
+    <div id="cta" class="abs center"><span class="ctaBtn">WhatsApp'tan yazın →</span></div>
+    <div id="url" class="abs center url" style="top:1260px">vegadijital.com.tr</div>
+  </div>
+
+  <div id="subtitle" class="abs center sub"></div>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+const prog = (t, a, b) => clamp((t - a) / (b - a));
+const easeOut = x => 1 - Math.pow(1 - x, 3);
+const easeInOut = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+const back = x => { const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
+
+// In with rise+blur, out with fade+blur
+function show(el, t, a, b, opt = {}) {
+  const d = opt.d || 0.6, dy = opt.dy ?? 40;
+  const i = easeOut(prog(t, a, a + d));
+  const o = b == null ? 1 : 1 - easeInOut(prog(t, b - (opt.od || 0.45), b));
+  const v = Math.min(i, o);
+  el.style.opacity = v;
+  const blur = (1 - v) * (opt.blur ?? 14);
+  el.style.filter = blur > 0.1 ? `blur(${blur}px)` : 'none';
+  el.style.transform = `translateY(${(1 - i) * dy}px) ${opt.extra || ''}`;
+  return v;
+}
+
+const SUBS = [
+  [0.3, 5.4, "Müşterileriniz artık yalnızca Google'da aramıyor,", " yapay zekâya da soruyor."],
+  [5.8, 11.4, "Peki ChatGPT ya da Gemini yanıt verirken", " sizi kaynak gösteriyor mu?"],
+  [12.4, 16.5, "Hedef kitlenizin yapay zekâya", " hangi soruları sorduğunu belirliyoruz."],
+  [16.8, 20.9, "Markanızın nasıl anıldığını", " platform ve tarih kaydıyla izliyoruz."],
+  [21.2, 25.3, "Yapay zekânın hangi siteleri", " kaynak gösterdiğini buluyoruz."],
+  [25.6, 29.7, "Marka ve hizmet bilgilerinizi", " tutarlı ve okunabilir hâle getiriyoruz."],
+  [30.2, 36.8, "Google'da sıralanmak tek başına yetmiyor.", " Yapay zekâ yanıtlarında da doğru anlaşılmalısınız."],
+  [37.6, 43.9, "Markanızın yapay zekâdaki görünürlüğünü", " birlikte değerlendirelim."],
+];
+
+function render(t) {
+  // Backgrounds
+  const dark = Math.max(easeInOut(prog(t, 11.4, 12.2)) - easeInOut(prog(t, 36.8, 37.6)), 0);
+  $('bgDark').style.opacity = dark;
+  const w = t * 0.35;
+  $('bl1').style.left = (180 + Math.sin(w) * 120) + 'px'; $('bl1').style.top = (1050 + Math.cos(w * .8) * 90) + 'px';
+  $('bl2').style.left = (-260 + Math.cos(w * .7) * 100) + 'px'; $('bl2').style.top = (300 + Math.sin(w * .9) * 120) + 'px';
+  $('bl3').style.left = (700 + Math.sin(w * 1.1) * 80) + 'px'; $('bl3').style.top = (200 + Math.cos(w) * 80) + 'px';
+  $('bd1').style.left = (40 + Math.sin(w) * 140) + 'px'; $('bd1').style.top = (800 + Math.cos(w * .8) * 120) + 'px';
+  $('bd2').style.left = (500 + Math.cos(w * .6) * 120) + 'px'; $('bd2').style.top = (1300 + Math.sin(w) * 80) + 'px';
+  $('brandLight').style.opacity = dark; $('brandDark').style.opacity = 1 - dark;
+  $('brand').style.opacity = 1 - prog(t, 37.0, 37.6);
+
+  // Subtitles: second half fades in from dim
+  const sub = $('subtitle');
+  sub.className = 'abs center sub' + (dark > .5 ? ' sublight' : '');
+  let html = '', op = 0;
+  for (const [a, b, p1, p2] of SUBS) {
+    if (t >= a - 0.1 && t <= b) {
+      const half = a + (b - a) * 0.42;
+      const k = prog(t, half, half + 0.5);
+      html = `${p1}<span class="${k < 1 ? 'dim' : ''}" style="opacity:${0.5 + 0.5 * k}">${p2}</span>`;
+      op = Math.min(prog(t, a - 0.1, a + 0.3), 1 - prog(t, b - 0.3, b));
+    }
+  }
+  sub.innerHTML = html; sub.style.opacity = op;
+
+  // S1 0–5.6
+  $('s1').style.display = t < 6 ? 'block' : 'none';
+  if (t < 6) {
+    show($('s1a'), t, 0.3, 5.5);
+    show($('s1bWrap'), t, 1.0, 5.5);
+    const sp = easeInOut(prog(t, 2.2, 2.8));
+    $('strike').style.width = (sp * 100) + '%';
+    $('s1b').style.color = sp > 0 ? `rgba(58,66,88,${1 - sp * .55})` : '#3A4258';
+    show($('s1c'), t, 2.9, 5.5, { dy: 60, d: 0.8 });
+  }
+
+  // S2 5.6–11.6
+  $('s2').style.display = t > 5.4 && t < 11.8 ? 'block' : 'none';
+  if (t > 5.4 && t < 11.8) {
+    const v = show($('chat'), t, 5.6, 11.5, { dy: 80, d: 0.7 });
+    const q = "Adana'da web tasarım için hangi firmayı önerirsin?";
+    const n = Math.floor(prog(t, 6.3, 7.6) * q.length);
+    $('bubble').textContent = q.slice(0, n) || ' ';
+    const tabIdx = t < 8.8 ? 0 : t < 9.8 ? 1 : 2;
+    ['tb0', 'tb1', 'tb2'].forEach((id, i) => $(id).className = 'tab' + (i === tabIdx ? ' on' : ''));
+    ['an0', 'an1', 'an2'].forEach((id, i) => show($(id), t, 7.9 + i * 0.35, null, { dy: 20, d: .45, blur: 6 }));
+    const wp = prog(t, 9.2, 9.75);
+    const s = back(wp);
+    $('warn').style.opacity = Math.min(clamp(wp * 3), v);
+    $('warn').style.transform = `rotate(-6deg) scale(${0.4 + 0.6 * s})`;
+  }
+
+  // S3 12–26.2
+  const s3on = t > 11.8 && t < 30.2;
+  $('s3').style.display = s3on ? 'block' : 'none';
+  if (s3on) {
+    const steps = [[12.2, 16.6, 'Sorular'], [16.6, 21.0, 'Görünürlük'], [21.0, 25.4, 'Kaynaklar'], [25.4, 29.8, 'Bilgi Temeli']];
+    let cur = steps.findIndex(([a, b]) => t >= a - 0.2 && t < b);
+    if (cur < 0) cur = 3;
+    $('chipTxt').textContent = steps[cur][2];
+    show($('chip3'), t, 12.2, 29.8, { dy: 20 });
+    steps.forEach(([a, b], i) => {
+      const p = $('p' + i);
+      const inP = easeOut(prog(t, a, a + 0.75));
+      const outP = easeInOut(prog(t, b - 0.45, b));
+      const vis = t >= a - 0.05 && t <= b + 0.05;
+      p.style.display = vis ? 'block' : 'none';
+      $('bg' + i).style.display = vis ? 'block' : 'none';
+      if (!vis) return;
+      const rot = (1 - inP) * -18 + outP * 10;
+      const tx = (1 - inP) * 260 - outP * 200;
+      p.style.opacity = Math.min(inP, 1 - outP);
+      p.style.filter = outP > 0 || inP < 1 ? `blur(${(1 - inP) * 10 + outP * 16}px)` : 'none';
+      p.style.transform = `perspective(1800px) translateX(${tx}px) rotateY(${rot}deg) scale(${0.94 + 0.06 * inP})`;
+      // slow drift
+      p.style.transform += ` translateY(${-prog(t, a, b) * 24}px)`;
+      const bg = $('bg' + i);
+      const bp = prog(t, a + 0.9, a + 1.4);
+      bg.style.display = vis ? 'block' : 'none';
+      bg.style.opacity = Math.min(clamp(bp * 2), 1 - outP);
+      bg.style.transform = `rotate(${i % 2 ? 3 : -3}deg) scale(${0.5 + 0.5 * back(bp)})`;
+    });
+    // panel inner animation
+    for (let i = 0; i < 6; i++) {
+      const pr = easeOut(prog(t, 17.3 + i * 0.18, 18.3 + i * 0.18));
+      $('b' + i).style.width = (pr * [72, 48, 60, 35, 54, 28][i]) + '%';
+      const cp = prog(t, 26.1 + i * 0.3, 26.3 + i * 0.3);
+      $('c' + i).style.background = cp > 0 ? 'var(--green)' : '#fff';
+      $('c' + i).style.borderColor = cp > 0 ? 'var(--green)' : '#D5DBE6';
+      $('c' + i).style.color = cp > 0 ? '#fff' : 'transparent';
+      $('c' + i).style.transform = `scale(${cp > 0 ? 0.7 + 0.3 * back(cp) : 1})`;
+    }
+    const hp = prog(t, 22.4, 22.9);
+    $('ownRow').style.background = `rgba(255,79,139,${hp * .1})`;
+    $('ownRow').style.outline = hp > 0 ? `3px solid rgba(255,79,139,${hp})` : 'none';
+  }
+
+  // S4 26.4–33.4
+  const s4on = t > 29.8 && t < 37.2;
+  $('s4').style.display = s4on ? 'block' : 'none';
+  if (s4on) {
+    show($('why'), t, 30.1, 36.9, { dy: 20 });
+    show($('s4a'), t, 30.4, 36.9, { dy: 50, d: .8 });
+    show($('s4b'), t, 33.0, 36.9, { dy: 50, d: .8 });
+    for (let i = 0; i < 6; i++) {
+      const e = $('f' + i);
+      const a = 31.2 + i * 0.3;
+      const v = show(e, t, a, 36.9, { dy: 30, blur: 8 });
+      const fl = Math.sin(t * 1.3 + i * 1.7) * 14;
+      e.style.transform += ` translateY(${fl}px)`;
+    }
+  }
+
+  // S5 33.8–40.6
+  const s5on = t > 37.2;
+  $('s5').style.display = s5on ? 'block' : 'none';
+  if (s5on) {
+    const lp = prog(t, 37.6, 38.5);
+    $('logo').style.opacity = easeOut(lp);
+    $('logo').style.transform = `scale(${0.85 + 0.15 * easeOut(lp)})`;
+    $('logo').style.filter = lp < 1 ? `blur(${(1 - lp) * 12}px)` : 'none';
+    show($('s5a'), t, 38.8, null, { dy: 40, d: .8 });
+    $('s5a2').style.opacity = 0.25 + 0.75 * prog(t, 39.6, 40.4);
+    const cp = prog(t, 40.6, 41.2);
+    $('cta').style.opacity = clamp(cp * 2);
+    $('cta').style.transform = `scale(${0.6 + 0.4 * back(cp)})`;
+    show($('url'), t, 41.1, null, { dy: 20 });
+  }
+}
+window.render = render;
+render(0);
+</script>
+</body>
+</html>
