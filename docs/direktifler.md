@@ -36,8 +36,14 @@
 10. **İsim girişi:** İlk ~3 saniyede "Mine MANAS / Founder | Digital Marketing Manager" aynı şablonla gelir.
     - Telefonda kesilmemesi için yazı **daha küçük** olur ve güvenli alan içinde kalır.
     - Bu girişi Mine CapCut'ta da yapabilir.
-11. **Tempo:** Manifesto videosu 1.2 hızda istendi (48 sn uzun bulundu). Sonraki videolarda da hedef süre ~40 sn; gerekirse 1.2x uygulanır, ses perdesi korunur.
+11. **Tempo:** Video hızlandırılmaz. 1.2x denendi, Mine "çok hızlı" dedi ve iptal etti. Tempo kesimlerle ve hareketle sağlanır.
 12. **Revizyon:** Notlar saniye bazında verilir ("0:08 zoom'u kaldır").
+
+**Manifesto videosundan öğrenilenler (v2 geri bildirimi):**
+- **Zoom bol olmalı.** Neredeyse her vurgu kelimesinde punch-in ya da zoom out yapılır. Örnek videolardaki yoğunluk hedeflenir.
+- **Giriş (hook) en önemli kısım.** Flaşlı giriş, sert zoom out ve ilk saniyelerde sık punch-in yapılır.
+- **Tam ekran ara görüntüler.** Anlatılan şey görselle gösterilir (ürün, logo, dünya gibi) ve ekran kaydırma geçişiyle girip çıkar. Marka örneği verilince markanın logosu gösterilir. Tam ekran MANİFESTO kartı beğenildi.
+- **Kapanış kartı** (logo, site, WhatsApp) beğenildi, aynı kalır.
 
 **Kullanılmayacaklar:** Renkli ışık parlaması (light leak), "matrix" efekti, CapCut tarzı abartılı trend efektleri.
 

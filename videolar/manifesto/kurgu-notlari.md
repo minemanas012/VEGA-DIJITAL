@@ -5,10 +5,15 @@
 - 4K (2160×3840), HEVC, 1 dk 48 sn.
 - Ham dosya depoda değil, boyutu çok büyük.
 
-**Teslim:** `manifesto-9x16-1.2x-altyazisiz.mp4`
-- 1080×1920, 30 fps, altyazısız.
-- Mine'ın isteğiyle **1.2 hıza** alındı; ses perdesi korundu. Süre 40,7 sn.
-- Aşağıdaki saniyeler 1.2x öncesi kurguya göre verildi. 1.2x videodaki karşılığını bulmak için 1,2'ye bölün.
+**Teslim (v2):** `manifesto-v2-altyazisiz.mp4`
+- 1080×1920, 30 fps, altyazısız, 48,8 sn, normal hız.
+- `manifesto-v2-onizleme.mp4`: 30 MB altı önizleme kopyası.
+
+**v1'den v2'ye değişenler (Mine'ın notları):**
+1. 1.2 hız iptal edildi; normal hız.
+2. Tam ekran ara görüntüler kaydırma geçişiyle eklendi: Patagonia logosu, mont ve çanta, dünya, tüketim (AVM).
+3. Kapanış kartı aynen kaldı.
+4. Zoom in/out sıklaştırıldı. Girişe (hook) flaş ve sert zoom out eklendi.
 
 ## Kesilenler
 
@@ -21,38 +26,36 @@
 | 1:45 sonrası | Çekim sonu. |
 | Cümle araları | 0,4 sn'den uzun duraklamalar kısaltıldı. |
 
-## Kamera hareketleri
+## Kamera ve ara görüntüler (v2)
 
-Çıktı videosundaki saniyeler.
+Saniyeler çıktı videosuna göre.
 
-| Saniye | Hareket | Ses |
-|---|---|---|
-| 0–5,6 | Yavaş yaklaşma; "kaçırıyor" kelimesinde punch-in | pop |
-| 5,6 | Kesme, geniş plan | |
-| 8,6 | Yakın plan | |
-| 12,9 | Zoom out (yeni konu: vizyon/misyon) | whoosh |
-| 19,1 | "karakter" kelimesinde punch-in ve kısa sarsıntı | pop |
-| 20,9 | Zoom out (Patagonia örneği) | whoosh |
-| 26,6 | Zoom out ("Yıllardır…") | whoosh |
-| 33,5 | "dur deyin" kelimesinde punch-in ve kısa sarsıntı | pop |
-| 35,4 | Flaş ve tam ekran MANİFESTO kartı (arka plan bulanık) | deklanşör |
-| 37,3 | Yakın plan | |
-| 45,5 | "duruşlarıyla" kelimesinde hafif punch-in | |
-| 46,8 | Kapanış kartı: logo, vegadijital.com.tr ve WhatsApp çağrısı | whoosh, pop |
-
-## Grafikler
-
-Grafikler gövde hizasında, ekranın %46–72'si arasında duruyor. Yüz ve alttaki altyazı alanı (%78–82) boş kalıyor.
-
-| Saniye | Grafik |
+| Saniye | Ne oluyor |
 |---|---|
-| 7–13 | "Ürün" kartı üstü çiziliyor; ardından "Fikir + Hikâye" kartı geliyor |
-| 14–21 | "Vizyon" ve "Misyon" kartları geliyor, sonra "+ KARAKTER" kartı |
-| 22,5–26,5 | "ÖRNEK · Patagonia" kartı; altında "mont" ve "çanta" |
-| 27–35 | Alıntı kartları: "Dünyayı kurtarmak için iş yapıyoruz." ve "Tüketim çılgınlığına **dur deyin.**" |
-| 35,4–37,3 | Tam ekran MANİFESTO kartı |
-| 37,3–40,5 | "Ne sattığınız" kartı üstü çiziliyor; ardından "**Neyi temsil ettiğiniz**" kartı geliyor |
-| 40,8–46,8 | "Sıradan markalar → ürünleriyle" ve "Güçlü markalar → **duruşlarıyla**" kartları; altında "HATIRLANIR" |
+| 0 | Flaş ile giriş, 1.35'ten sert zoom out (whoosh ve deklanşör) |
+| 0,7 / 2,7 / 4,2 | Kelime vurgulu punch-in'ler. "kaçırıyor"da en güçlüsü, kısa sarsıntıyla |
+| 5,6–12,9 | Her cümlede zoom değişimi; "Ürün" ve "Fikir + Hikâye" kartları |
+| 12,9 | Konu geçişi zoom out; ardından Vizyon/Misyon ve "+ KARAKTER" kartları, "karakter"de punch-in ve sarsıntı |
+| 22,6 | Kaydırma: tam ekran Patagonia logosu |
+| 24,7 | Kaydırma: üstte MONT, "çanta" denince altta ÇANTA görseli |
+| 26,6 | Videoya dönüş |
+| 27,35–30 | Tam ekran dünya ve "Dünyayı kurtarmak için iş yapıyoruz." |
+| 32,05–35,4 | Tam ekran AVM ve "Tüketim çılgınlığına dur deyin."; "dur deyin"de sarsıntı |
+| 35,4 | Flaş ve MANİFESTO kartı |
+| 37,3–46,8 | Kelime vurgulu zoom'lar, karşılaştırma kartı; "duruşlarıyla"da punch-in ve sarsıntı |
+| 46,8 | Kapanış kartı |
+
+## Görsel kaynakları
+
+| Görsel | Kaynak | Lisans |
+|---|---|---|
+| Mont rafı | rawpixel (Openverse) | CC0 |
+| Sarı sırt çantası | StockSnap, Felix Russell-Saw | CC0 |
+| Dünya | NASA Goddard / Reto Stöckli (rawpixel) | CC0 / kamu malı |
+| AVM | StockSnap, Burst | CC0 |
+| Patagonia logosu | worldvectorlogo | Tescilli marka; örnek gösterimi amacıyla kullanıldı |
+
+Not: Görsellerin bulunabilen boyutları yaklaşık 1000 piksel. Kalite düşmesin diye görseller tam ekrana büyütülmedi. Arka planda aynı görselin bulanık hali var, önünde net görsel kart olarak duruyor. Mine'ın gönderdiği stok görüntüler varsa onlar tercih edilir.
 
 ## Yeniden üretmek için
 
