@@ -26,8 +26,13 @@ Kaynak: Mine Manas'ın kendi Reels kurgusu (örnek: `1014.mp4`) + Claude ile kur
 - Hashtag yok; dayanaksız iddia yok (bkz. `marka-rehberi.md`).
 
 ## İş akışı (kararlaştırılan)
-1. Mine Manas prompter ile çeker; ham çekim (efektsiz, altyazısız) 30 MB altı parçalar halinde yüklenir.
-2. Prompter metni (konuşma metni) gönderilir; cümleler sessizlik analiziyle ses bölümlerine eşlenir.
-3. Claude kurgular: ölü an/tekrar kesimi, zoom in/out, punch-in, kısa sarsıntı, flaş, ses efekti, stok görüntü yerleşimi, ses dengeleme.
-4. Teslim: altyazısız 1080p MP4. Altyazıyı Mine Manas CapCut'ta ekler.
-5. Revize notları saniye bazında ("0:08 zoom'u kaldır").
+1. Mine Manas prompter ile çeker. Ham çekim efektsizdir ve altyazısızdır. Google Drive linkiyle gönderilir; 30 MB altındaki dosyalar doğrudan yüklenebilir.
+2. Prompter metni gönderilir. Konuşma faster-whisper ile yazıya dökülür ve metinle karşılaştırılır. Metinde olmayan her şey kesilir: kameramana direktifler, tekrarlar, ölü anlar.
+3. Claude kurgular:
+   - Zoom in ve zoom out, punch-in, kısa sarsıntı, flaş.
+   - Ses efekti, stok görüntü yerleşimi, ses dengeleme.
+   - Video tek düze akmamalı, ama efektler abartılmaz.
+4. Teslim: altyazısız 1080p MP4. Altyazıyı ve gerekirse isim girişini Mine Manas CapCut'ta ekler.
+5. Revize notları saniye bazında verilir ("0:08 zoom'u kaldır").
+
+Tüm direktifler: [`direktifler.md`](direktifler.md).

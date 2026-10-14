@@ -2,6 +2,8 @@
 
 Bu depo, **Vega Dijital** (İng. Vega Digital) markasına aittir. Tüm içerik, tasarım ve web çalışmalarında kaynak belge: [`docs/marka-rehberi.md`](docs/marka-rehberi.md).
 
+**Her oturumda önce şunları oku:** [`docs/direktifler.md`](docs/direktifler.md) (Mine Manas'ın tüm talimatları) ve video işlerinde [`docs/video-stili.md`](docs/video-stili.md). Önceki konuşmaların tam kaydı: [`docs/konusmalar/`](docs/konusmalar/). Yeni bir direktif gelince `docs/direktifler.md` güncellenir. Kullanıcıyla Türkçe konuşulur.
+
 ## Kısa marka özeti
 
 - **Ne:** Adana merkezli dijital pazarlama ve strateji ajansı (şahıs işletmesi). Kuruluş: 3 Şubat 2026.
