@@ -36,7 +36,8 @@
 10. **İsim girişi:** İlk ~3 saniyede "Mine MANAS / Founder | Digital Marketing Manager" aynı şablonla gelir.
     - Telefonda kesilmemesi için yazı **daha küçük** olur ve güvenli alan içinde kalır.
     - Bu girişi Mine CapCut'ta da yapabilir.
-11. **Revizyon:** Notlar saniye bazında verilir ("0:08 zoom'u kaldır").
+11. **Tempo:** Manifesto videosu 1.2 hızda istendi (48 sn uzun bulundu). Sonraki videolarda da hedef süre ~40 sn; gerekirse 1.2x uygulanır, ses perdesi korunur.
+12. **Revizyon:** Notlar saniye bazında verilir ("0:08 zoom'u kaldır").
 
 **Kullanılmayacaklar:** Renkli ışık parlaması (light leak), "matrix" efekti, CapCut tarzı abartılı trend efektleri.
 

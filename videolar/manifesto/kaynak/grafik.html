@@ -1,0 +1,138 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:M;src:url(/home/user/vega-dijital/assets/fonts/Montserrat-ExtraBold.ttf);font-weight:800}
+@font-face{font-family:M;src:url(/home/user/vega-dijital/assets/fonts/Montserrat-Bold.ttf);font-weight:700}
+@font-face{font-family:M;src:url(/home/user/vega-dijital/assets/fonts/Montserrat-Black.ttf);font-weight:900}
+@font-face{font-family:M;src:url(/home/user/vega-dijital/assets/fonts/Montserrat-SemiBold.ttf);font-weight:600}
+:root{--ink:#14284C;--navy:#0A1430;--y:#FCE400;--pink:#FF4F8B;--green:#19B985;--blue:#2D6BFF;--muted:#8A93A8}
+html,body{margin:0;width:1080px;height:1920px;background:transparent;overflow:hidden;font-family:M}
+.g{position:absolute;left:0;top:0;width:1080px;height:1920px;display:none}
+.card{position:absolute;left:50%;background:#fff;border-radius:30px;box-shadow:0 18px 50px rgba(10,20,48,.28);color:var(--ink);font-weight:800;transform-origin:50% 50%}
+.pill{display:inline-block;padding:10px 22px;border-radius:999px;font-size:30px;font-weight:800;letter-spacing:2px;color:#fff}
+.mk{background:linear-gradient(transparent 12%,var(--y) 12%,var(--y) 88%,transparent 88%);background-repeat:no-repeat;background-size:0% 100%;padding:0 8px;margin:0 -8px}
+.strike{position:relative}
+.strike::after{content:"";position:absolute;left:-6px;top:52%;height:9px;width:calc(var(--s,0)*(100% + 12px));background:var(--pink);border-radius:5px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:20px}
+</style></head><body>
+
+<!-- C2: ürün -> fikir + hikâye -->
+<div class="g" id="c2">
+  <div class="card" id="c2a" style="top:930px;width:520px;margin-left:-260px;padding:30px 0;text-align:center;font-size:64px"><span class="strike" id="c2s">Ürün</span></div>
+  <div class="card" id="c2b" style="top:1120px;width:860px;margin-left:-430px;padding:34px 0;text-align:center;font-size:62px">
+    <span id="c2f">Fikir</span> <span id="c2p" style="color:var(--pink)">+</span> <span id="c2h" class="mk">Hikâye</span>
+  </div>
+</div>
+
+<!-- C3: vizyon / misyon / + karakter -->
+<div class="g" id="c3">
+  <div class="card" id="c3v" style="top:920px;width:400px;margin-left:-420px;padding:28px 0;text-align:center;font-size:52px">Vizyon</div>
+  <div class="card" id="c3m" style="top:920px;width:400px;margin-left:20px;padding:28px 0;text-align:center;font-size:52px">Misyon</div>
+  <div class="card" id="c3k" style="top:1110px;width:820px;margin-left:-410px;padding:36px 0;text-align:center;font-size:68px;font-weight:900"><span style="color:var(--pink)">+</span> <span class="mk" id="c3km">KARAKTER</span></div>
+</div>
+
+<!-- C4: Patagonia -->
+<div class="g" id="c4">
+  <div class="card" id="c4a" style="top:900px;width:780px;margin-left:-390px;padding:34px 0 36px;text-align:center">
+    <div class="pill" style="background:var(--green)">ÖRNEK</div>
+    <div style="font-size:84px;font-weight:900;margin-top:14px;letter-spacing:1px">Patagonia</div>
+    <div style="font-size:30px;font-weight:600;color:var(--muted);margin-top:4px">outdoor giyim markası</div>
+  </div>
+  <div class="card" id="c4m" style="top:1215px;width:300px;margin-left:-330px;padding:22px 0;text-align:center;font-size:44px">mont</div>
+  <div class="card" id="c4c" style="top:1215px;width:300px;margin-left:30px;padding:22px 0;text-align:center;font-size:44px">çanta</div>
+</div>
+
+<!-- C5: alıntılar -->
+<div class="g" id="c5">
+  <div class="card" id="c5a" style="top:900px;width:880px;margin-left:-440px;padding:30px 44px;box-sizing:border-box;font-size:48px;line-height:1.22">
+    <div style="font-size:90px;line-height:.6;color:var(--blue);font-weight:900;height:40px">“</div><span id="c5at"></span>
+  </div>
+  <div class="card" id="c5b" style="top:1160px;width:880px;margin-left:-440px;padding:30px 44px;box-sizing:border-box;font-size:48px;line-height:1.22">
+    <div style="font-size:90px;line-height:.6;color:var(--pink);font-weight:900;height:40px">“</div><span id="c5bt"></span><span class="mk" id="c5bm"></span>
+  </div>
+</div>
+
+<!-- C6: MANİFESTO (tam ekran, arka plan Python'da bulanıklaşır) -->
+<div class="g" id="c6" style="background:rgba(10,20,48,.55)">
+  <div id="c6l" style="position:absolute;top:760px;width:100%;text-align:center"><span class="pill" style="background:var(--pink)">MARKANIN DURUŞU</span></div>
+  <div id="c6t" style="position:absolute;top:840px;width:100%;text-align:center;color:#fff;font-size:150px;font-weight:900;letter-spacing:6px"></div>
+  <div id="c6u" style="position:absolute;top:1040px;left:50%;height:14px;margin-left:-330px;width:660px;background:var(--y);border-radius:7px;transform-origin:0 50%"></div>
+</div>
+
+<!-- C7: ne sattığınız değil / neyi temsil ettiğiniz -->
+<div class="g" id="c7">
+  <div class="card" id="c7a" style="top:930px;width:760px;margin-left:-380px;padding:30px 0;text-align:center;font-size:54px;color:var(--muted)"><span class="strike" id="c7s">Ne sattığınız</span></div>
+  <div class="card" id="c7b" style="top:1110px;width:880px;margin-left:-440px;padding:34px 0;text-align:center;font-size:58px;font-weight:900"><span class="mk" id="c7m">Neyi temsil ettiğiniz</span></div>
+</div>
+
+<!-- C8: karşılaştırma -->
+<div class="g" id="c8">
+  <div class="card" id="c8a" style="top:900px;width:900px;margin-left:-450px;padding:30px 40px;box-sizing:border-box;font-size:44px">
+    <div class="row"><span style="color:var(--muted)">Sıradan markalar</span><span id="c8a2" style="color:var(--muted)">→ ürünleriyle</span></div>
+  </div>
+  <div class="card" id="c8b" style="top:1060px;width:900px;margin-left:-450px;padding:34px 40px;box-sizing:border-box;font-size:48px;font-weight:900">
+    <div class="row"><span>Güçlü markalar</span><span id="c8b2">→ <span class="mk" id="c8bm">duruşlarıyla</span></span></div>
+  </div>
+  <div id="c8c" style="position:absolute;top:1235px;width:100%;text-align:center"><span class="pill" style="background:var(--ink);font-size:36px;letter-spacing:3px">HATIRLANIR</span></div>
+</div>
+
+<!-- C9: kapanış -->
+<div class="g" id="c9" style="background:var(--navy)">
+  <img id="c9l" src="/home/user/vega-dijital/assets/logo/logo-beyaz.png" style="position:absolute;left:50%;top:560px;width:520px;margin-left:-260px">
+  <div id="c9t" style="position:absolute;top:1120px;width:100%;text-align:center;color:#fff;font-size:44px;font-weight:700">vegadijital.com.tr</div>
+  <div id="c9w" style="position:absolute;top:1210px;width:100%;text-align:center"><span class="pill" style="background:var(--green);font-size:36px;letter-spacing:1px;padding:16px 34px">WhatsApp'tan yazın →</span></div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const eo=x=>1-Math.pow(1-cl(x),3);
+const back=x=>{x=cl(x);const c=1.7;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+// pop-in + fade-out around [t0,t1]
+function pop(el,t,t0,t1,dy=40){
+  const a=cl((t-t0)/0.35), o=cl((t1-t)/0.25);
+  if(t<t0||t>t1){el.style.opacity=0;return 0}
+  const s=0.85+0.15*back(a);
+  el.style.opacity=Math.min(eo(a),o);
+  el.style.transform=`translateY(${(1-eo(a))*dy}px) scale(${s})`;
+  return a;
+}
+function mark(el,t,t0,d=0.35){el.style.backgroundSize=(cl((t-t0)/d)*100)+'%'+' 100%'}
+function strike(el,t,t0){el.style.setProperty('--s',eo((t-t0)/0.3))}
+function type(el,txt,t,t0,cps=28){el.textContent=txt.slice(0,Math.floor(cl((t-t0)*cps,0,txt.length)))}
+const W={
+ c2:[6.95,12.85], c3:[14.2,20.85], c4:[22.55,26.45], c5:[26.95,35.3], c6:[35.42,37.3], c7:[37.31,40.5], c8:[40.75,46.81], c9:[46.81,48.81]
+};
+function render(t){
+  for(const k in W){$(k).style.display=(t>=W[k][0]&&t<=W[k][1])?'block':'none'}
+  // C2
+  pop($('c2a'),t,7.25,12.85); strike($('c2s'),t,7.85);
+  pop($('c2b'),t,10.1,12.85); $('c2h').style.opacity=t>=11.1?1:0; $('c2p').style.opacity=t>=11.0?1:0; mark($('c2h'),t,11.25);
+  // C3
+  pop($('c3v'),t,14.35,20.85); pop($('c3m'),t,14.9,20.85);
+  const dim=cl((t-17.4)/0.4); $('c3v').style.filter=$('c3m').style.filter=`opacity(${1-0.45*dim})`;
+  const ka=pop($('c3k'),t,19.0,20.85); mark($('c3km'),t,19.35);
+  // C4
+  pop($('c4a'),t,22.7,26.45); pop($('c4m'),t,24.8,26.45); pop($('c4c'),t,25.3,26.45);
+  // C5
+  pop($('c5a'),t,27.3,35.3); type($('c5at'),'Dünyayı kurtarmak için iş yapıyoruz.',t,27.45,24);
+  if(t>=32.0){const k=cl((t-32.0)/0.35);$('c5a').style.filter=`opacity(${1-0.4*k})`}else $('c5a').style.filter='';
+  pop($('c5b'),t,32.0,35.3); type($('c5bt'),'Tüketim çılgınlığına ',t,32.1,26);
+  $('c5bm').textContent=t>=33.45?'dur deyin.':''; mark($('c5bm'),t,33.5,0.3);
+  // C6
+  $('c6').style.opacity=Math.min(cl((t-35.42)/0.15),cl((37.3-t)/0.2));
+  $('c6t').textContent='MANİFESTO'.slice(0,Math.floor(cl((t-35.62)*22,0,9)));
+  $('c6u').style.transform=`scaleX(${eo((t-36.0)/0.5)})`;
+  pop($('c6l'),t,35.5,37.3,20);
+  // C7
+  pop($('c7a'),t,37.4,40.5); strike($('c7s'),t,38.5);
+  pop($('c7b'),t,38.8,40.5); mark($('c7m'),t,39.3,0.45);
+  // C8
+  pop($('c8a'),t,40.9,46.81); $('c8a2').style.opacity=eo((t-43.0)/0.3);
+  pop($('c8b'),t,43.75,46.81); $('c8b2').style.opacity=eo((t-45.4)/0.3); mark($('c8bm'),t,45.55);
+  pop($('c8c'),t,46.0,46.81,20);
+  // C9
+  $('c9').style.opacity=eo((t-46.81)/0.3);
+  pop($('c9l'),t,46.95,49,30); pop($('c9t'),t,47.3,49,20); pop($('c9w'),t,47.6,49,20);
+}
+</script></body></html>
