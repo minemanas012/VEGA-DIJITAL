@@ -51,6 +51,11 @@
 - Mine'ın kendi Reels kurgusu.
 - Claude ile kurgulanmış referans video ("Andrej Karpathy'nin 4 yöntemi"). Bu videodan alınacak öğeler: beyaz kartlı başlıklar, numaralı yöntem kartları, ekran görüntüsü üzerinde vurgu, sade geçişler.
 
+## Paylaşım metni üslubu
+
+- Sanatsal içeriklerde reklam cümlesi kurulmaz; metin 1–2 cümlelik, sade ve betimleyici olur.
+- "X değil, Y" ya da "X yetmez, Y" kalıbındaki karşıtlık cümleleri kullanılmaz.
+
 ## Sosyal medya içerik üretimi (Kasım 2026)
 
 Mine'ın yetişemediği dönemlerde çekim gerektirmeyen içerik üretilir.

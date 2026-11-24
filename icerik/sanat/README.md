@@ -28,6 +28,6 @@ Hepsi Art Institute of Chicago koleksiyonundan, kamu malı (CC0). Atıf zorunlu 
 
 Profilde yan yana dursunlar diye ters sırayla, arka arkaya paylaşılır: önce manolya, sonra arama çubuğu, en son heykel.
 
-1. **03-manolya:** Güzel görünmek yetmez, işe de yaramalı. Tasarımı estetikle işlevin buluştuğu yerde kuruyoruz.
-2. **02-olcek:** Doğru kişi sizi aradığında orada olmak her şeyi değiştirir. Google'da da, yapay zekâ yanıtlarında da.
-3. **01-ekrandan-cikan:** İyi bir marka ekranda görünmekle yetinmez, akılda yer eder. Markanızın ekranın ötesine taşınması için çalışıyoruz.
+1. **03-manolya:** Yüz yılı aşkın bir manolya, bugünün bir tarayıcı penceresinde açıyor.
+2. **02-olcek:** Rousseau'nun ormanında küçük bir mermer figür, bir arama çubuğunun üstünde duruyor.
+3. **01-ekrandan-cikan:** Dört asırlık bir mermer büst, telefon ekranının kenarından dışarı bakıyor.
