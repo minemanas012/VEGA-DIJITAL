@@ -23,3 +23,11 @@ Hepsi Art Institute of Chicago koleksiyonundan, kamu malı (CC0). Atıf zorunlu 
 | The Lost Pleiade | Randolph Rogers (1825–1892) |
 | Springtime | Théodore Rousseau (1812–1867) |
 | Magnolias on Light Blue Velvet Cloth | Martin Johnson Heade (1819–1904) |
+
+## Paylaşım metinleri
+
+Profilde yan yana dursunlar diye ters sırayla, arka arkaya paylaşılır: önce manolya, sonra arama çubuğu, en son heykel.
+
+1. **03-manolya:** Güzel görünmek yetmez, işe de yaramalı. Tasarımı estetikle işlevin buluştuğu yerde kuruyoruz.
+2. **02-olcek:** Doğru kişi sizi aradığında orada olmak her şeyi değiştirir. Google'da da, yapay zekâ yanıtlarında da.
+3. **01-ekrandan-cikan:** İyi bir marka ekranda görünmekle yetinmez, akılda yer eder. Markanızın ekranın ötesine taşınması için çalışıyoruz.
