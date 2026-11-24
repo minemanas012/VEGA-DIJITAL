@@ -68,6 +68,10 @@ Mine'ın yetişemediği dönemlerde çekim gerektirmeyen içerik üretilir.
   - Şablon: `icerik/sablon/vega.css`.
 - **Reels:** HTML animasyonu olarak üretilir: kinetik yazı, kaydırma geçişleri, flaşlı giriş. `icerik/sablon/reels.js` ile MP4'e çevrilir.
   - Sessiz teslim edilir; müziği Mine Instagram'da ekler.
+- **Sanatsal seri ("bunu yapabiliyoruz"):** Pinterest tarzı fotoğraf manipülasyonları istendi.
+  - Teknikler: perspektif, ekrandan veya çerçeveden taşma, ölçek oyunu.
+  - Malzeme: Kamu malı müze görselleri (Art Institute of Chicago, CC0). Klasik heykel ve tablolar modern dijital öğelerle birleştirilir.
+  - Yer: `icerik/sanat/`.
 - **Yöntem:** Önce ilk haftanın içerikleri üretilir, Mine onaylarsa ayın kalanı aynı stille üretilir.
 
 ## Animasyonlu tanıtım videoları
