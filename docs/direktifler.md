@@ -74,7 +74,8 @@ Mine'ın yetişemediği dönemlerde çekim gerektirmeyen içerik üretilir.
   - Yer: `icerik/sanat/`.
 - **Marka adı ve logo: dolaylı kalınır.**
   - Sanatsal ve ChatGPT işi görsellerde "Vega Dijital" yazılmaz.
-  - Gerekirse sadece "Vega" yazılır; ama Mine istemedikçe görsele yazı ya da logo eklenmez.
+  - Bundan sonraki işlerde marka dolaylı yer alır: bir köşede küçük bir "Vega" yeterli. ChatGPT görsellerine ise Mine istemedikçe hiçbir yazı eklenmez.
+  - Mevcut sanatsal seri (heykel, arama çubuğu, manolya) logolu hâliyle kalır.
   - "Görsel tasarım · Vega Dijital" gibi etiketler kullanılmaz.
 - **ChatGPT görselleri:** Mine'ın ChatGPT'ye ürettirdiği görsellerin tasarımı değiştirilmez. Sadece istenen düzeltme yapılır ve gömülü bilgiden arındırılmış temiz PNG olarak geri gönderilir (amaç: Meta'nın yapay zekâ etiketi). Yer: `icerik/sanat/gpt/`.
 - **Yöntem:** Önce ilk haftanın içerikleri üretilir, Mine onaylarsa ayın kalanı aynı stille üretilir.
