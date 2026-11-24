@@ -72,6 +72,11 @@ Mine'ın yetişemediği dönemlerde çekim gerektirmeyen içerik üretilir.
   - Teknikler: perspektif, ekrandan veya çerçeveden taşma, ölçek oyunu.
   - Malzeme: Kamu malı müze görselleri (Art Institute of Chicago, CC0). Klasik heykel ve tablolar modern dijital öğelerle birleştirilir.
   - Yer: `icerik/sanat/`.
+- **Marka adı ve logo: dolaylı kalınır.**
+  - Sanatsal ve ChatGPT işi görsellerde "Vega Dijital" yazılmaz.
+  - Gerekirse sadece "Vega" yazılır; ama Mine istemedikçe görsele yazı ya da logo eklenmez.
+  - "Görsel tasarım · Vega Dijital" gibi etiketler kullanılmaz.
+- **ChatGPT görselleri:** Mine'ın ChatGPT'ye ürettirdiği görsellerin tasarımı değiştirilmez. Sadece istenen düzeltme yapılır ve gömülü bilgiden arındırılmış temiz PNG olarak geri gönderilir (amaç: Meta'nın yapay zekâ etiketi). Yer: `icerik/sanat/gpt/`.
 - **Yöntem:** Önce ilk haftanın içerikleri üretilir, Mine onaylarsa ayın kalanı aynı stille üretilir.
 
 ## Animasyonlu tanıtım videoları
