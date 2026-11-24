@@ -139,7 +139,6 @@ def p1():
     img = grain(img)
     pil = to_pil(img)
     text(pil, (70, 104), 'Markanız\nekranda\nkalmasın.', 66, lead=1.04)
-    tag(pil, (72, 60), 'GÖRSEL TASARIM · VEGA DİJİTAL')
     logo(pil)
     pil.save('01-ekrandan-cikan.png')
 
@@ -182,7 +181,6 @@ def p2():
     img = grain(img, 0.03)
     pil = to_pil(img)
     text(pil, (70, 104), 'Görünür olmak,\ndoğru yerde\ndurmaktır.', 70, fill=(255, 255, 255), lead=1.04)
-    tag(pil, (72, 60), 'GÖRSEL TASARIM · VEGA DİJİTAL', fill=(255, 255, 255))
     logo(pil, white=True)
     pil.save('02-olcek.png')
 
@@ -229,7 +227,6 @@ def p3():
     img = grain(img, 0.03)
     pil = to_pil(img)
     text(pil, (70, 104), 'Estetik ve işlev,\naynı karede.', 68, fill=(255, 255, 255), lead=1.05)
-    tag(pil, (72, 60), 'GÖRSEL TASARIM · VEGA DİJİTAL', fill=(255, 255, 255))
     logo(pil, white=True)
     pil.save('03-manolya.png')
 
