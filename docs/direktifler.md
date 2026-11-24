@@ -51,6 +51,25 @@
 - Mine'ın kendi Reels kurgusu.
 - Claude ile kurgulanmış referans video ("Andrej Karpathy'nin 4 yöntemi"). Bu videodan alınacak öğeler: beyaz kartlı başlıklar, numaralı yöntem kartları, ekran görüntüsü üzerinde vurgu, sade geçişler.
 
+## Sosyal medya içerik üretimi (Kasım 2026)
+
+Mine'ın yetişemediği dönemlerde çekim gerektirmeyen içerik üretilir.
+
+- **Takvim:** Aylık hazırlanır, haftada 3 paylaşım:
+  - Pazartesi carousel
+  - Çarşamba animasyonlu reels
+  - Cuma tek görsel
+- **Yer:** `icerik/<yıl-ay>/takvim.md`. Her gönderi için konu, açılış, görsel yönü ve paylaşım metni yazılır.
+- **Tasarım:** "Güzel iş gibi görünen" premium tasarımlar.
+  - Yumuşak renk geçişli arka planlar, cam efektli kartlar, arayüz maketleri (telefon, arama çubuğu, grafik).
+  - Az yazı.
+  - Montserrat başlık, Open Sauce metin.
+  - Logo sağ altta.
+  - Şablon: `icerik/sablon/vega.css`.
+- **Reels:** HTML animasyonu olarak üretilir: kinetik yazı, kaydırma geçişleri, flaşlı giriş. `icerik/sablon/reels.js` ile MP4'e çevrilir.
+  - Sessiz teslim edilir; müziği Mine Instagram'da ekler.
+- **Yöntem:** Önce ilk haftanın içerikleri üretilir, Mine onaylarsa ayın kalanı aynı stille üretilir.
+
 ## Animasyonlu tanıtım videoları
 
 - Format 9:16 (1080×1920). Örnek: `videolar/geo-tanitim-9x16/`, WhatsApp'tan gelen referans videonun yapısıyla yapıldı.
